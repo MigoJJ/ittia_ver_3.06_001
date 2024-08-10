@@ -1,6 +1,6 @@
 package je.panse.doro;
 
-import java.awt.BorderLayout;	
+import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.KeyAdapter;
@@ -8,23 +8,26 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.SwingUtilities;
+import javax.swing.event.DocumentListener;
+
 import je.panse.doro.chartplate.GDSEMR_ButtonPanel;
 import je.panse.doro.chartplate.GDSEMR_DocumentListner;
 import je.panse.doro.chartplate.GDSEMR_FunctionKey;
 import je.panse.doro.chartplate.GDSEMR_fourgate;
 import je.panse.doro.fourgate.influenza.InjectionApp;
 import je.panse.doro.listner.buttons.EMR_BlendColors;
+import je.panse.doro.samsara.EMR_east_buttons_obj;
 import je.panse.doro.samsara.EMR_OBJ_Vitalsign.Vitalsign;
 import je.panse.doro.samsara.EMR_OBJ_excute.EMR_BMI_calculator;
 import je.panse.doro.samsara.EMR_OBJ_excute.EMR_HbA1c;
 import je.panse.doro.samsara.EMR_OBJ_excute.EMR_TFT;
-import je.panse.doro.samsara.EMR_east_buttons_obj;
 import je.panse.doro.soap.subjective.EMR_symptom_main;
 
 public class GDSEMR_frame {
@@ -77,7 +80,7 @@ public class GDSEMR_frame {
             scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
             centerPanel.add(scrollPane);
 
-            textAreas[i].getDocument().addDocumentListener(new GDSEMR_DocumentListner(textAreas, tempOutputArea));
+            textAreas[i].getDocument().addDocumentListener((DocumentListener) new GDSEMR_DocumentListner(textAreas, tempOutputArea));
             textAreas[i].addMouseListener(new DoubleClickMouseListener());
             textAreas[i].addKeyListener(new FunctionKeyPress());
         }

@@ -72,7 +72,7 @@ public class InjectionApp {
             return;
         }
 
-        String CCstring = "The patient visitis for Vaccination\n";
+        String CCstring = "The patient visits for Vaccination\n";
         String PIstring = "  [ ✔ ]  no allergy to eggs, chicken\n"
                 + "           , or any other component of the vaccine.\n"
                 + "  [ ✔ ]  no s/p Guillain-Barré syndrome.\n"

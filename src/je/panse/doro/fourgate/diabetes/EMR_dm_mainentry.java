@@ -1,6 +1,6 @@
-package je.panse.doro.fourgate.thyroid.entry;
+package je.panse.doro.fourgate.diabetes;
 
-import java.awt.Color;				
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GradientPaint;
 import java.awt.Graphics;
@@ -13,11 +13,12 @@ import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
-import je.panse.doro.fourgate.thyroid.medication.EMR_thyroid_meds;
+import je.panse.doro.fourgate.diabetes.dmAutonomic.ANPdm;
+import je.panse.doro.fourgate.diabetes.dmPeripheral.PNPdm;
 import je.panse.doro.soap.subjective.EMR_symptom_list;
 import je.panse.doro.soap.subjective.EMR_symptom_retStr;
 
-public class EMR_thyroid_mainentry {
+public class EMR_dm_mainentry {
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Select category ...");
@@ -27,13 +28,13 @@ public class EMR_thyroid_mainentry {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         String[] buttonNames = {
-                "Thyroid Physical examination",
-                "Hyperthyroidism Symptom",
-                "Hypothyroidism Symptom",
+                "DM General symptoms",
+                "DM Retinopathy",
+                "DM Peripheral Neuropathy",
+                "DM Autonomic Neuropathy",
                 "Medications",
-                "Abnormal TFT on Routine check",
-                "Thyroidal nodule",
-                "Post operation F/U PTC",
+                "DM",
+                "DM",
                 "Quit"
         };
 
@@ -52,14 +53,21 @@ public class EMR_thyroid_mainentry {
             protected void paintComponent(Graphics g) {
                 if (g instanceof Graphics2D) {
                     Graphics2D g2d = (Graphics2D) g;
-                    int h = getHeight();
-                    GradientPaint gradient = new GradientPaint(0, 0, new Color(210, 180, 140), 0, h, new Color(180, 150, 110));
+                    int width = getWidth();
+                    int height = getHeight();
+
+                    // Create a gradient from top to bottom
+                    GradientPaint gradient = new GradientPaint(
+                            0, 0, Color.decode("#B9D8DE"),
+                            0, height, Color.decode("#6FB9C7"));
+
                     g2d.setPaint(gradient);
-                    g2d.fillRect(0, 0, getWidth(), getHeight());
+                    g2d.fillRect(0, 0, width, height);
                 }
                 super.paintComponent(g);
             }
         };
+
         button.setPreferredSize(new Dimension(200, 40));
         button.setMaximumSize(new Dimension(200, 40));
         button.setAlignmentX(Box.CENTER_ALIGNMENT);
@@ -70,17 +78,18 @@ public class EMR_thyroid_mainentry {
             public void actionPerformed(ActionEvent e) {
                 if (name.equals("Quit")) {
                     frame.dispose();
-                } else if (name.equals("Thyroid Physical examination")) {
-                	EMR_thyroid_PE.main(null);
-                } else if (name.equals("Hyperthyroidism Symptom")) {
-                    String[] Esrr = EMR_symptom_retStr.returnStr("Hyperthyroidism");
+                } else if (name.equals("DM General symptoms")) {
+                    String[] Esrr = EMR_symptom_retStr.returnStr("Diabetes Mellitus");
                     EMR_symptom_list.main(Esrr);
-                } else if (name.equals("Hypothyroidism Symptom")) {
-                    String[] Esrr = EMR_symptom_retStr.returnStr("Hypothyroidism");
-                    EMR_symptom_list.main(Esrr);
+                } else if (name.equals("DM Retinopathy")) {
+                	EMR_FU_retinopathy.main(null);
+                } else if (name.equals("DM Peripheral Neuropathy")) {
+                	PNPdm.main(null);
+                } else if (name.equals("DM Autonomic Neuropathy")) {
+                	ANPdm.main(null); 
                 } else if (name.equals("Medications")) {
                     String[] Esrr = EMR_symptom_retStr.returnStr("Medications");
-                    EMR_thyroid_meds.main(null);
+                    EMR_dm_meds.main(null);
                 } else {
                     // Replace with your logic to handle button click
                     // String[] args = returnStr(name);

@@ -126,7 +126,7 @@ public class EMR_FU_retinopathy {
         // Quit button
         JButton quitButton = new JButton("Quit");
         quitButton.addActionListener((ActionEvent e) -> {
-            System.exit(0);
+            frame.dispose();
         });
 
         // Add buttons to southPanel

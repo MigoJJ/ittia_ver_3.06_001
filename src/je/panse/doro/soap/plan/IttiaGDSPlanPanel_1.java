@@ -96,15 +96,14 @@ public class IttiaGDSPlanPanel_1 extends JPanel {
     }
 
 private String returnchangefield2(String meds) {
-		String[] codes = {"5", "55", "6", "8", "2", "4", "55", "0", "1"};
+		String[] codes = {"5", "55", "6", "8", "2", "4", "0", "1"};
        String[] messages = {
-            " starting new medicine",
-            " Medication discontinuation",
-            " continue with current dosages of meds",
-            " an increase in drug dosage",
-            " a reduction in drug dosage",
-            " Return to previous Prescription",
-            " Medication discontinuation :",
+            " |→  starting new medicine to treat ",
+            " →|  discontinue current medication",
+            " [ → ] advised the patient to continue with current medication",
+            " [ ↗ ] increased the dose of current medication",
+            " [ ↘ ] decreased the dose of current medicatio",
+            " [ ⭯ ] changed the dose of current medication",
             " Observation & Follow-up without medication",
             " With conservative treatment"
         };

@@ -5,7 +5,8 @@ import java.awt.event.KeyEvent;
 import je.panse.doro.fourgate.EMR_FU_diabetesEdit;
 import je.panse.doro.fourgate.EMR_FU_hypercholesterolemiaEdit;
 import je.panse.doro.fourgate.EMR_FU_hypertensionEdit;
-import je.panse.doro.fourgate.thyroid.EMR_thyroid_main;
+import je.panse.doro.fourgate.thyroid.entry.EMR_thyroid_mainentry;
+import je.panse.doro.fourgate.thyroid.pregnancy.EMR_thyroid_Pregnancyentry;
 
 public class GDSEMR_FunctionKey {
 
@@ -23,7 +24,8 @@ public class GDSEMR_FunctionKey {
         } else if (keyCode == KeyEvent.VK_F3) {
         	EMR_FU_hypercholesterolemiaEdit.main(null);
         } else if (keyCode == KeyEvent.VK_F4) {
-        	EMR_thyroid_main.main(null);
+        	EMR_thyroid_mainentry.main(null);
+        	EMR_thyroid_Pregnancyentry.main(null);
 
         } else if (keyCode == KeyEvent.VK_F9) {
             je.panse.doro.GDSEMR_frame.setTextAreaText(8, "\n...follow - up without medications [ :cd ] \n...");

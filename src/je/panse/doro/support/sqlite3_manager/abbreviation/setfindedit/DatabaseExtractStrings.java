@@ -31,7 +31,7 @@ public class DatabaseExtractStrings {
   private static void saveToFile(String[][] data, String filename) throws IOException {
        String filePath = EntryDir.homeDir + "/support/sqlite3_manager/abbreviation/" + "extracteddata.txt"; 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {      for (String[] entry : data) {
-        writer.write("outputText = outputText.replace( \"" + entry[0] + " \" , \"" + entry[1] + " \");\n");
+        writer.write("replacements.put( \"" + entry[0] + " \" , \"" + entry[1] + " \");\n");
       }
     }
   }

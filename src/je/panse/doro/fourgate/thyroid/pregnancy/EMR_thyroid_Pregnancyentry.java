@@ -1,4 +1,4 @@
-package je.panse.doro.fourgate.thyroid.prganacy;
+package je.panse.doro.fourgate.thyroid.pregnancy;
 
 import java.awt.Color;
 import java.awt.Dimension;

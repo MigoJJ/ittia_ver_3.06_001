@@ -1,9 +1,9 @@
-package je.panse.doro.fourgate.thyroid.prganacy;
+package je.panse.doro.fourgate.thyroid.pregnancy;
 
-import javax.swing.*;		
+import javax.swing.*;
 import java.awt.*;
 
-public class EMR_Thyroid_Preg_te extends JFrame {
+public class EMR_Thyroid_Preg_to extends JFrame {
     private String[] sections = {
         "Personal Medical History",
         "Family Medical History",
@@ -17,36 +17,32 @@ public class EMR_Thyroid_Preg_te extends JFrame {
 
     private String[][] sectionItems = {
         {
-            "Previous diagnosis of hyperthyroidism",
-            "Any previous treatments for hyperthyroidism",
-            "Any history of thyroid surgery or radioactive iodine treatment"
+            "Previous diagnosis of hypothyroidism",
+            "Any previous treatments for hypothyroidism",
+            "Any history of thyroid surgery"
         },
         {
             "Any family history of thyroid disorders or autoimmune conditions",
-            "Any family history of hyperthyroidism during pregnancy"
+            "Any family history of hypothyroidism during pregnancy"
         },
-        // Add empty arrays for the remaining sections
         {
             "Gestational age (number of weeks pregnant)",
             "Any complications or high-risk factors associated with the pregnancy"
         },
         {
-            "Weight loss or difficulty gaining weight during pregnancy",
-            "Rapid or irregular heartbeat",
-            "Tremors or excessive shaking",
-            "Increased sensitivity to heat",
-            "Fatigue or weakness",
-            "Sleep disturbances",
-            "Changes in bowel movements (increased frequency or diarrhea)",
-            "Emotional or mood changes"
+            "Weight gain or difficulty losing weight during pregnancy",
+            "Fatigue or lack of energy",
+            "Dry skin or hair",
+            "Cold intolerance",
+            "Depression or mood changes"
         },
         {
-            "Any current medications taken for hyperthyroidism",
+            "Any current medications taken for hypothyroidism",
             "Any changes in medication dosage during pregnancy"
         },
         {
-            "Any history of hyperthyroidism during previous pregnancies",
-            "Any complications or adverse outcomes associated with hyperthyroidism during pregnancy"
+            "Any history of hypothyroidism during previous pregnancies",
+            "Any complications or adverse outcomes associated with hypothyroidism during pregnancy"
         },
         {
             "Results of thyroid function tests (TSH, T3, T4) during pregnancy",
@@ -54,22 +50,12 @@ public class EMR_Thyroid_Preg_te extends JFrame {
         },
         {
             "Any other medical conditions or chronic illnesses",
-            "Any autoimmune conditions or thyroid-related disorders",
-            "     Autoimmune thyroiditis",
-            "     Graves' disease",
-            "     Hashimoto's thyroiditis",
-            "     Thyroid nodules",
-            "     Thyroid cancer",
-            "     Thyroid storm",
-            "     Thyroid hormone resistance",
-            "     Thyroid eye disease",
-            "     Subacute thyroiditis",
-            "     Postpartum thyroiditis"
+            "Any autoimmune conditions or thyroid-related disorders"
         }
     };
 
-    public EMR_Thyroid_Preg_te() {
-        setTitle("Hyperthyroidism with pregnancy Medical History");
+    public EMR_Thyroid_Preg_to() {
+        setTitle("Hypothyroidism with pregnancy Medical History");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new GridLayout(4, 2)); // 4 rows, 2 columns
 
@@ -94,7 +80,7 @@ public class EMR_Thyroid_Preg_te extends JFrame {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                new EMR_Thyroid_Preg_te();
+                new EMR_Thyroid_Preg_to();
             }
         });
     }
