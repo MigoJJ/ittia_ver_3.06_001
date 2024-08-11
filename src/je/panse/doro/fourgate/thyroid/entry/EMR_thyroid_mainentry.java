@@ -12,6 +12,7 @@ import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.Timer;
 
 import je.panse.doro.fourgate.thyroid.medication.EMR_thyroid_meds;
 import je.panse.doro.soap.subjective.EMR_symptom_list;
@@ -42,6 +43,16 @@ public class EMR_thyroid_mainentry {
             frame.add(button);
             frame.add(Box.createVerticalStrut(10));
         }
+        
+        // Create a Timer to close the frame after 5 minutes (300,000 milliseconds)
+        Timer timer = new Timer(500000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose(); // Close the frame
+            }
+        });
+        timer.setRepeats(false); // Ensure the timer only runs once
+        timer.start(); // Start the timer
 
         frame.setVisible(true);
     }

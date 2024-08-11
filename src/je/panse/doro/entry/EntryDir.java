@@ -13,8 +13,8 @@ public class EntryDir {
         if ("prod".equals(env)) {
             homeDir = currentDir + File.separator + "je" + File.separator + "panse" + File.separator + "doro";
         } else {
-            homeDir = currentDir + File.separator + "src" + File.separator + "je" + File.separator + "panse" + File.separator + "doro";
-//            homeDir = currentDir + File.separator + "je" + File.separator + "panse" + File.separator + "doro";
+//            homeDir = currentDir + File.separator + "src" + File.separator + "je" + File.separator + "panse" + File.separator + "doro";
+            homeDir = currentDir + File.separator + "je" + File.separator + "panse" + File.separator + "doro";
 
         }
         backupDir = homeDir + File.separator + "tripikata" + File.separator + "rescue";

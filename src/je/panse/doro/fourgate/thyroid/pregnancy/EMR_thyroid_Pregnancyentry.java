@@ -5,12 +5,14 @@ import java.awt.Dimension;
 import java.awt.GradientPaint;
 import java.awt.GridLayout;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.Timer;
 
 import je.panse.doro.GDSEMR_frame;
 
@@ -34,6 +36,17 @@ public class EMR_thyroid_Pregnancyentry {
         JFrame frame = createMainFrame();
         addButtonsToFrame(frame);
         positionFrameToBottomRight(frame);
+        
+        // Timer to close the frame after 5 minutes (300,000 milliseconds)
+        Timer timer = new Timer(300000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+            }
+        });
+        timer.setRepeats(false); // Ensures the timer only triggers once
+        timer.start(); // Start the timer
+
         frame.setVisible(true);
     }
 

@@ -12,6 +12,7 @@ import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.Timer;
 
 import je.panse.doro.fourgate.diabetes.dmAutonomic.ANPdm;
 import je.panse.doro.fourgate.diabetes.dmPeripheral.PNPdm;
@@ -43,6 +44,16 @@ public class EMR_dm_mainentry {
             frame.add(button);
             frame.add(Box.createVerticalStrut(10));
         }
+
+        // Create a Timer to close the frame after 5 minutes (300,000 milliseconds)
+        Timer timer = new Timer(500000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose(); // Close the frame
+            }
+        });
+        timer.setRepeats(false); // Ensure the timer only runs once
+        timer.start(); // Start the timer
 
         frame.setVisible(true);
     }
@@ -82,11 +93,11 @@ public class EMR_dm_mainentry {
                     String[] Esrr = EMR_symptom_retStr.returnStr("Diabetes Mellitus");
                     EMR_symptom_list.main(Esrr);
                 } else if (name.equals("DM Retinopathy")) {
-                	EMR_FU_retinopathy.main(null);
+                    EMR_FU_retinopathy.main(null);
                 } else if (name.equals("DM Peripheral Neuropathy")) {
-                	PNPdm.main(null);
+                    PNPdm.main(null);
                 } else if (name.equals("DM Autonomic Neuropathy")) {
-                	ANPdm.main(null); 
+                    ANPdm.main(null); 
                 } else if (name.equals("Medications")) {
                     String[] Esrr = EMR_symptom_retStr.returnStr("Medications");
                     EMR_dm_meds.main(null);
