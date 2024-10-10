@@ -1,21 +1,7 @@
 
-  PMH>	-------------------------
-    □ Dyslipidemia     	□ Hypertension     	□ Diabetes Mellitus
-    □ Cancer           	□ Operation        	▣ Thyroid Disease
-    □ Asthma           	□ Pneumonia        	▣ Tuberculosis
-    □ GERD             	▣ Hepatitis A / B  	□ Gout
-    □ Arthritis        	▣ Hearing Loss     	□ Parkinson's Disease
-    □ CVA              	□ Depression       	□ Cognitive Disorder
-    □ AMI              	□ Angina Pectoris  	□ Arrhythmia
-    □ Allergy          	▣ All denied allergies...
-    □ Food             	□ Injection        	□ Medication
--------------------------------------------------
-  A>	-------------------------
-   ▣ Allergy
-   During the medical check-up, the patient had no known allergies
-   to food, injections and medications as of October 2024...
-   ▣ Hepatitis A / B
-   ▣ Hearing Loss
-   ▣ Thyroid Disease
-   ▣ Tuberculosis
---------------------------
+  O>	
+< DEXA >
+	Osteoporosis T-score [ -3.5 ]
+     Age : [89]  Gender : [Female]  Fracture : none  Menopause : [+]
+  Comment>	
+#  Osteoporosis T-score [ -3.5 ]   2024.10.10

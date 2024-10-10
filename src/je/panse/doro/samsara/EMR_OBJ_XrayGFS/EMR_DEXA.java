@@ -165,10 +165,10 @@ public class EMR_DEXA extends JFrame implements ActionListener {
         boolean menopauseHistory = menopauseCheckBox.isSelected();
 
         // Calculate diagnosis
-        String diagnosis = calculateDEXADiagnosis(age, gender, totZScore, fractureHistory, menopauseHistory);
+        String diagnosis = calculateDEXADiagnosis(age, gender, totZScore, fractureHistory,menopauseHistory);
 
         // Update result text areas
-        updateResultTextAreas(diagnosis, age, gender, fractureHistory);
+        updateResultTextAreas(diagnosis, age, gender, fractureHistory, menopauseHistory);
 
         // Dispose current frame
         dispose();
@@ -183,13 +183,16 @@ public class EMR_DEXA extends JFrame implements ActionListener {
         resultTextArea.setText("");
     }
 
-    private void updateResultTextAreas(String diagnosis, int age, String gender, boolean fractureHistory) {
+    private void updateResultTextAreas(String diagnosis, int age, String gender, boolean fractureHistory,boolean menopauseHistory) {
         resultTextArea.setText(diagnosis);
         GDSEMR_frame.setTextAreaText(5, "\n< DEXA >\n\t" + diagnosis);
         String cdate = Date_current.main("d");
 
         String fractureStatus = fractureHistory ? "[+]" : "none";
-        GDSEMR_frame.setTextAreaText(5, String.format("\n\tAge : [%d]  Gender : [%s]  Fracture : %s", age, gender, fractureStatus));
+        String menopauseStatus = menopauseHistory ? "[+]" : "none";
+
+        
+        GDSEMR_frame.setTextAreaText(5, String.format("\n   Age : [%d]  Gender : [%s]  Fracture : %s  Menopause : %s", age, gender, fractureStatus,menopauseStatus));
         
         GDSEMR_frame.setTextAreaText(9, "\n#  " + diagnosis + "   " + cdate);
     }

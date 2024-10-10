@@ -1,6 +1,6 @@
 package je.panse.doro.listner.buttons;
 
-import java.awt.Toolkit;	
+import java.awt.Toolkit;		
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 
@@ -22,6 +22,7 @@ import je.panse.doro.listner.ai.Mprompt;
 import je.panse.doro.listner.buttons.EMR_Backup_Excute.EMR_B_CopyBackup;
 import je.panse.doro.listner.buttons.EMR_Backup_Excute.EMR_B_FileListFrame;
 import je.panse.doro.listner.buttons.EMR_Backup_Excute.EMR_InputFrame;
+import je.panse.doro.samsara.EMR_OBJ_XrayGFS.EMR_DEXA;
 import je.panse.doro.samsara.comm.FileGeditToCilpboard;
 import je.panse.doro.samsara.comm.OpenOneNotePage;
 import je.panse.doro.support.EMR_ittia_support;
@@ -123,7 +124,7 @@ public class EMR_ButtonEntry extends GDSEMR_frame {
                     EMR_thyroid_Pregnancyentry.main(null);
                     break;
                 case "Osteoporosis":
-                    EMR_FU_uriEdit.main(null);
+                	  EMR_DEXA.main(null);
                     break;
                 case "URI":
                     EMR_FU_uriEdit.main(null);
