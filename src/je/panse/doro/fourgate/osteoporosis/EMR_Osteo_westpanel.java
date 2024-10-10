@@ -29,10 +29,10 @@ public class EMR_Osteo_westpanel {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         String[] buttonNames = {
-                "Osteoporosis Medical History",
-                "Osteoporosis Lifestyle Factors",
-                "Osteoporosis Risk Assessment & Symptoms",
-                "Osteoporosis Diagnosis & Treatment Plan",
+                "Os Medical History",
+                "Os Lifestyle Factors",
+                "Os Risk Assessment & Symptoms",
+                "Os Diagnosis & Treatment Plan",
                 "Osteoporosis",
                 "Osteoporosis",
                 "Osteoporosis",
@@ -89,17 +89,16 @@ public class EMR_Osteo_westpanel {
             public void actionPerformed(ActionEvent e) {
                 if (name.equals("Quit")) {
                     frame.dispose();
-                } else if (name.equals("Osteo General symptoms")) {
-                    String[] Esrr = EMR_symptom_retStr.returnStr("Diabetes Mellitus");
-                    EMR_symptom_list.main(Esrr);
-                } else if (name.equals("DM Retinopathy")) {
+                } else if (name.equals("Os Medical History")) {
+                	   EMR_osteo_MedicalHistory.main(null);
+                } else if (name.equals("Os Lifestyle Factors")) {
 
-                } else if (name.equals("DM Peripheral Neuropathy")) {
+                } else if (name.equals("Os Risk Assessment & Symptoms")) {
                     PNPdm.main(null);
-                } else if (name.equals("DM Autonomic Neuropathy")) {
+                } else if (name.equals("Os Diagnosis & Treatment Plan")) {
                     ANPdm.main(null); 
-                } else if (name.equals("Medications")) {
-	            } else if (name.equals("DM F/U Laboratory Test")) {
+                } else if (name.equals("Osteoporosis")) {
+	            } else if (name.equals("Osteoporosis")) {
 	            }
                 else {
                     // Replace with your logic to handle button click
