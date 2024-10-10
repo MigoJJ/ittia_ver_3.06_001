@@ -1,6 +1,6 @@
 package je.panse.doro;
 
-import java.awt.BorderLayout;
+import java.awt.BorderLayout;	
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.KeyAdapter;
@@ -8,7 +8,6 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -17,34 +16,27 @@ import javax.swing.ScrollPaneConstants;
 import javax.swing.SwingUtilities;
 import javax.swing.event.DocumentListener;
 
-import je.panse.doro.chartplate.GDSEMR_ButtonPanel;
-import je.panse.doro.chartplate.GDSEMR_DocumentListner;
-import je.panse.doro.chartplate.GDSEMR_FunctionKey;
-import je.panse.doro.chartplate.GDSEMR_fourgate;
+import je.panse.doro.chartplate.*;
 import je.panse.doro.fourgate.influenza.InjectionApp;
 import je.panse.doro.listner.buttons.EMR_BlendColors;
-import je.panse.doro.samsara.EMR_east_buttons_obj;
+import je.panse.doro.samsara.*;
 import je.panse.doro.samsara.EMR_OBJ_Vitalsign.Vitalsign;
-import je.panse.doro.samsara.EMR_OBJ_excute.EMR_BMI_calculator;
-import je.panse.doro.samsara.EMR_OBJ_excute.EMR_HbA1c;
-import je.panse.doro.samsara.EMR_OBJ_excute.EMR_TFT;
+import je.panse.doro.samsara.EMR_OBJ_excute.*;
 import je.panse.doro.soap.subjective.EMR_symptom_main;
 
 public class GDSEMR_frame {
     private static final int FRAME_WIDTH = 1280;
     private static final int FRAME_HEIGHT = 1020;
-    public static int PatientID = 0;
-
+    
     public static JFrame frame;
     public static JTextArea[] textAreas;
     public static JTextArea tempOutputArea;
-    public static String[] titles;
+    public static String[] titles = {"CC>", "PI>", "ROS>", "PMH>", "S>", "O>", "Physical Exam>", "A>", "P>", "Comment>"};
 
     public GDSEMR_frame() {
         frame = new JFrame("GDS EMR Interface for Physician");
         textAreas = new JTextArea[10];
         tempOutputArea = new JTextArea();
-        titles = new String[]{"CC>", "PI>", "ROS>", "PMH>", "S>", "O>", "Physical Exam>", "A>", "P>", "Comment>"};
     }
 
     public void createAndShowGUI() throws Exception {
@@ -52,38 +44,10 @@ public class GDSEMR_frame {
         frame.setLocation(360, 60);
         frame.setUndecorated(true);
 
-        JPanel centerPanel = new JPanel(new GridLayout(5, 2));
-        centerPanel.setPreferredSize(new Dimension(900, 1000));
-
-        tempOutputArea.setEditable(true);
-
-        JPanel westPanel = new JPanel(new BorderLayout());
-        westPanel.setPreferredSize(new Dimension(500, FRAME_HEIGHT));
-        JScrollPane outputScrollPane = new JScrollPane(tempOutputArea);
-        outputScrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-        westPanel.add(outputScrollPane, BorderLayout.CENTER);
-
+        JPanel centerPanel = createCenterPanel();
+        JPanel westPanel = createWestPanel();
         JPanel northPanel = new GDSEMR_ButtonPanel("north");
         JPanel southPanel = new GDSEMR_ButtonPanel("south");
-
-        // Initialize and setup JTextAreas and their JScrollPane containers
-        for (int i = 0; i < textAreas.length; i++) {
-            textAreas[i] = new JTextArea();
-            String inputData = (titles[i] + "\t" + " ");
-            textAreas[i].setLineWrap(true);
-            textAreas[i].setText(inputData);
-            textAreas[i].setCaretPosition(0);
-            
-            EMR_BlendColors.blendColors(textAreas[i], tempOutputArea, i);
-
-            JScrollPane scrollPane = new JScrollPane(textAreas[i]);
-            scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-            centerPanel.add(scrollPane);
-
-            textAreas[i].getDocument().addDocumentListener((DocumentListener) new GDSEMR_DocumentListner(textAreas, tempOutputArea));
-            textAreas[i].addMouseListener(new DoubleClickMouseListener());
-            textAreas[i].addKeyListener(new FunctionKeyPress());
-        }
 
         frame.add(centerPanel, BorderLayout.CENTER);
         frame.add(westPanel, BorderLayout.WEST);
@@ -92,6 +56,44 @@ public class GDSEMR_frame {
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
+    }
+
+    private JPanel createCenterPanel() {
+        JPanel centerPanel = new JPanel(new GridLayout(5, 2));
+        centerPanel.setPreferredSize(new Dimension(900, 1000));
+
+        for (int i = 0; i < textAreas.length; i++) {
+            textAreas[i] = new JTextArea(titles[i] + "\t");
+            textAreas[i].setLineWrap(true);
+            textAreas[i].setCaretPosition(0);
+
+            try {
+				EMR_BlendColors.blendColors(textAreas[i], tempOutputArea, i);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+            JScrollPane scrollPane = new JScrollPane(textAreas[i]);
+            scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+            centerPanel.add(scrollPane);
+
+            textAreas[i].getDocument().addDocumentListener(new GDSEMR_DocumentListner(textAreas, tempOutputArea));
+            textAreas[i].addMouseListener(new DoubleClickMouseListener());
+            textAreas[i].addKeyListener(new FunctionKeyPress());
+        }
+        return centerPanel;
+    }
+
+    private JPanel createWestPanel() {
+        JPanel westPanel = new JPanel(new BorderLayout());
+        westPanel.setPreferredSize(new Dimension(500, FRAME_HEIGHT));
+
+        JScrollPane outputScrollPane = new JScrollPane(tempOutputArea);
+        outputScrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        westPanel.add(outputScrollPane, BorderLayout.CENTER);
+
+        return westPanel;
     }
 
     public static void main(String[] args) {
@@ -104,7 +106,7 @@ public class GDSEMR_frame {
             }
         });
 
-        // Additional feature executions, likely these are separate threads or events
+        // Additional feature executions
         EMR_east_buttons_obj.main(null);
         Vitalsign.main(args);
         EMR_HbA1c.main(null);
@@ -126,13 +128,8 @@ public class GDSEMR_frame {
         @Override
         public void keyPressed(KeyEvent e) {
             int keyCode = e.getKeyCode();
-
-            // Check if the key code is within the range of function keys from F1 to F12
             if (keyCode >= KeyEvent.VK_F1 && keyCode <= KeyEvent.VK_F12) {
-                // Construct the function key message dynamically
                 String functionKeyMessage = "F" + (keyCode - KeyEvent.VK_F1 + 1) + " key pressed - Action executed.";
-
-                // Handle the function key action using the utility class, passing the key code
                 GDSEMR_FunctionKey.handleFunctionKeyAction(1, functionKeyMessage, keyCode);
             }
         }

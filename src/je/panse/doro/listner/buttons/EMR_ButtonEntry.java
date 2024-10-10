@@ -18,7 +18,7 @@ import je.panse.doro.fourgate.influenza.InjectionApp;
 import je.panse.doro.fourgate.routinecheck.RoutineCheck;
 import je.panse.doro.fourgate.thyroid.entry.EMR_thyroid_mainentry;
 import je.panse.doro.fourgate.thyroid.pregnancy.EMR_thyroid_Pregnancyentry;
-import je.panse.doro.listner.AI_bard_chatGPT.GDSLaboratoryGUI;
+import je.panse.doro.listner.ai.Mprompt;
 import je.panse.doro.listner.buttons.EMR_Backup_Excute.EMR_B_CopyBackup;
 import je.panse.doro.listner.buttons.EMR_Backup_Excute.EMR_B_FileListFrame;
 import je.panse.doro.listner.buttons.EMR_Backup_Excute.EMR_InputFrame;
@@ -96,7 +96,7 @@ public class EMR_ButtonEntry extends GDSEMR_frame {
                 case "Button 9":
                     break;
                 case "ittia_EMR_AI":
-                	GDSLaboratoryGUI.main(null);
+                	Mprompt.main(null);
                     break;
                 default:
                     System.out.println("Invalid Button title");

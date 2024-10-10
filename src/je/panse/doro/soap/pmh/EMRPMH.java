@@ -25,16 +25,16 @@ public class EMRPMH extends JFrame {
         "Hypertension", "Dyslipidemia", "Diabetes Mellitus",
         "Cancer", "Operation", "Thyroid Disease",
         "Asthma", "Pneumonia", "Tuberculosis",
-        "Chronic Hepatitis B", "GERD", "Gout",
+        "GERD","Hepatitis A / B","Gout",
         "Arthritis", "Hearing Loss", "Parkinson's Disease",
         "CVA", "Depression", "Cognitive Disorder",
-        "Angina Pectoris", "AMI", "Arrhythmia",
-        "Allergy", "Food", "Injection", "Medication"
+        "AMI","Angina Pectoris", "Arrhythmia",
+        "Allergy", "Food", "Injection", "Medication","..."
     };
 
     public EMRPMH() {
         setTitle("EMR PMH");
-        setSize(800, 850);
+        setSize(800, 820);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
         initComponents();
@@ -43,7 +43,7 @@ public class EMRPMH extends JFrame {
     private void initComponents() {
         // Text areas initialization
         textArea1 = new JTextArea(3, 10);
-        textArea2 = new JTextArea(14, 50);
+        textArea2 = new JTextArea(11, 50);
         setupTextArea(textArea1);
         setupTextArea(textArea2);
         textArea2.setEditable(false);  // textArea2 for display only
@@ -98,10 +98,10 @@ public class EMRPMH extends JFrame {
             "    □ Dyslipidemia     \t□ Hypertension     \t□ Diabetes Mellitus\n" +
             "    □ Cancer           \t□ Operation        \t□ Thyroid Disease\n" +
             "    □ Asthma           \t□ Pneumonia        \t□ Tuberculosis\n" +
-            "    □ Chronic Hepatitis B\t□ GERD             \t□ Gout\n" +
+            "    □ GERD             \t□ Hepatitis A / B  \t□ Gout\n" +
             "    □ Arthritis        \t□ Hearing Loss     \t□ Parkinson's Disease\n" +
             "    □ CVA              \t□ Depression       \t□ Cognitive Disorder\n" +
-            "    □ Angina Pectoris  \t□ AMI              \t□ Arrhythmia\n" +
+            "    □ AMI              \t□ Angina Pectoris  \t□ Arrhythmia\n" +
             "    □ Allergy          \t□ ...              \n" +
             "    □ Food             \t□ Injection        \t□ Medication\n"
         );

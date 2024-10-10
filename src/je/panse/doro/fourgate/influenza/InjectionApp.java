@@ -17,15 +17,15 @@ public class InjectionApp {
     private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd");
     
     private static final String[] BUTTON_LABELS = {
-        "Vaxigriptetra pfs inj (4가) [유독]",
-        "SKY Cellflu (4 가) [nip] ",
+        "Sanofi's VaxigripTetra® Vaccine(4가) [유독]",
+        "Kovax Influ 4ga PF® vaccine [nip] ",
         "Tdap (Tetanus, Diphtheria, Pertussis)",
         "Td (Tetanus, Diphtheria)",
         "Shingles Vaccine (Shingrix) #1/2",
         "HAV vaccination #1/2",
         "HBV vaccination #1/3",
         "Prevena 13 (pneumococcal vaccine (PCV13))",
-        "Recommend for Delayed Immunization",
+        "Etc.",
         "Quit"
     };
 
@@ -81,8 +81,9 @@ public class InjectionApp {
         String Pstring = "\n   ...Vaccination as scheduled";
         String Influ = CCstring + PIstring;
 
-        if (clickedButtonText.contains("Delay")) {
-            GDSEMR_frame.setTextAreaText(8, "\n  #  " + clickedButtonText + "  [" + currentDate + "]");
+        if (clickedButtonText.contains("Etc")) {
+        	 InjectionCheck.main(null);
+//            GDSEMR_frame.setTextAreaText(8, "\n  #  " + clickedButtonText + "  [" + currentDate + "]");
         } else {
             GDSEMR_frame.setTextAreaText(0, Influ);
             GDSEMR_frame.setTextAreaText(7, "\n  #  " + clickedButtonText + "  [" + currentDate + "]");

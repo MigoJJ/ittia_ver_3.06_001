@@ -34,7 +34,7 @@ public class EMR_dm_mainentry {
                 "DM Peripheral Neuropathy",
                 "DM Autonomic Neuropathy",
                 "Medications",
-                "DM",
+                "DM F/U Laboratory Test",
                 "DM",
                 "Quit"
         };
@@ -99,9 +99,12 @@ public class EMR_dm_mainentry {
                 } else if (name.equals("DM Autonomic Neuropathy")) {
                     ANPdm.main(null); 
                 } else if (name.equals("Medications")) {
-                    String[] Esrr = EMR_symptom_retStr.returnStr("Medications");
                     EMR_dm_meds.main(null);
-                } else {
+	            } else if (name.equals("DM F/U Laboratory Test")) {
+	                EMR_dm_lab.main(null);
+	            }
+                
+                else {
                     // Replace with your logic to handle button click
                     // String[] args = returnStr(name);
                     // EMR_symptom_list.main(args);

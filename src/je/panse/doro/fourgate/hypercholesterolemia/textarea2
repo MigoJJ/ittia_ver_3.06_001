@@ -1,10 +1,7 @@
-ROS>
-[◇] Headache,    [◇] Neck pain,
-[◇] Earache,       [◇] Sinus congestion,
-[◇] Difficulty swallowing,    [◇] Hoarseness,
-[◇] Jaw pain,       [◇] Facial swelling,
-[◇] Nasal congestion,
-[◇] Dizziness,      [◇] Tinnitus (ringing in the ears),
-[◇] Vision changes,
-[◇] Mouth sores,[◇] Enlarged lymph nodes,
-[◇] Sleep apnea
+ROS>< Hematology/Oncology >,
+	[◇] Easy bruising,
+	[◇] Fatigue,
+	[◇] Enlarged lymph nodes,
+	[◇] Night sweats,
+	[◇] Skin changes
+

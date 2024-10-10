@@ -1,6 +1,6 @@
 package je.panse.doro.chartplate;
 
-import java.awt.Color;
+import java.awt.Color;		
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
