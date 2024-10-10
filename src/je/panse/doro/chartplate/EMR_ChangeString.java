@@ -13,39 +13,7 @@ public class EMR_ChangeString {
     static {
         // Populate the map with replacements
     	replacements.put( ":aa " , "Astrix 100 mg 1 tab po qd ");
-<<<<<<< HEAD
-    	replacements.put( ":Af " , "Atrial Fibrillation ");
-    	replacements.put( ":Afr " , "Atrial Fibrillation with RVR ");
-    	replacements.put( ":AF " , "Atrial Flutter ");
-    	replacements.put( ":afp " , "AFP elevation ");
-    	replacements.put( ":ami " , "Acute Myocardial Infarction ");
-    	replacements.put( ":amis " , "Acute Myocardial Infarction with stent insertion ");
-    	replacements.put( ":anx " , "Anxiety disorder ");
-    	replacements.put( ":ap " , "Angina Pectoris ");
-    	replacements.put( ":apc " , "APC atrial premature complexes ");
-    	replacements.put( ":aps " , "Angina Pectoris with stent insertion ");
-    	replacements.put( ":as " , "Artherosclerosis Carotid artery ");
-    	replacements.put( ":asa " , "Artherosclerosis Carotid artery and Aorta ");
-    	replacements.put( ":at " , "Atypical Chest pain ");
-    	replacements.put( ":bco " , "s/p Breast Cancer Operation ");
-    	replacements.put( ":bcoc " , "s/p Breast Cancer Operation+ ChemoTx(+) ");
-    	replacements.put( ":bcor " , "s/p Breast Cancer Operation + RT(+) ");
-    	replacements.put( ":bcocr " , "s/p Breast Cancer Operation : ChemoTx(+) + RT(+) ");
-    	replacements.put( ":bcy " , "Breast Cyst ");
-    	replacements.put( ":bn " , "Breast Nodule ");
-    	replacements.put( ":bnb " , "Breast Nodule with biopsy ");
-    	replacements.put( ":bph " , "BPH ");
-    	replacements.put( ":call " , "The patient received a lab results phone call notification from the doctor's office. ");
-    	replacements.put( ":ca1 " , "CA19-9 elevation ");
-    	replacements.put( ":cat " , "Cataract(+) ");
-    	replacements.put( ":cato " , "Cataract operation (+) [ ] ");
-    	replacements.put( ":c " , "Hypercholesterolemia ");
-    	replacements.put( ":cf " , "Hypercholesterolemia F/U ");
-    	replacements.put( ":cd " , "Colonic diverticulum [  ] test ");
-    	replacements.put( ":cog " , "Cognitive Disorder ");
-    	replacements.put( ":con " , "Constipation ");
-    	replacements.put( ":cov " , "COVID-19 Antibody/Antigen Kit [+] ");
-=======
+
     	replacements.put( ":af " , "Atrial Fibrillation ");
     	replacements.put( ":afr " , "Atrial Fibrillation with RVR ");
     	replacements.put( ":afl " , "Atrial Flutter ");
@@ -77,18 +45,6 @@ public class EMR_ChangeString {
     	replacements.put( ":cog " , "Cognitive Disorder ");
     	replacements.put( ":con " , "Constipation ");
     	replacements.put( ":cov" , "COVID-19 Antibody/Antigen Kit [+] ");
->>>>>>> refs/remotes/origin/feature
-    	replacements.put( ":covc " , "COVID-19 Antibody/Antigen Kit [+] with complications ");
-    	replacements.put( ":covs " , "COVID-19 Antibody/Antigen Kit  [+] without complications ");
-    	replacements.put( ":cp " , "Colonic Polyp ");
-    	replacements.put( ":cpm " , "Colonic Polyps multiple ");
-    	replacements.put( ":cps " , "Colonic Polyp single ");
-    	replacements.put( ":d " , "diabetes mellitus ");
-    	replacements.put( ":da " , "DM with Autonomic Neuropathy ");
-    	replacements.put( ":dep " , "Depression ");
-    	replacements.put( ":dia " , "Diarrhea ");
-    	replacements.put( ":dn " , "DM with Nephropathy ");
-<<<<<<< HEAD
     	replacements.put( ":dan " , "DM with Autonomic Neuropathy ");
     	replacements.put( ":dnm " , "DM with Nephropathy with microalbuminuria ");
     	replacements.put( ":dnc " , "DM with Nephropathy with CRF ");
@@ -193,7 +149,6 @@ public class EMR_ChangeString {
     	replacements.put( ":ver " , "Vertigo ");
     	replacements.put( ":wei " , "Weight loss [     ] kg ");
     	replacements.put( ":weig " , "Weight gain [     ] kg ");
-=======
     	replacements.put( ":dna " , "DM with Autonomic Neuropathy ");
     	replacements.put( ":dnm " , "DM with Nephropathy with microalbuminuria ");
     	replacements.put( ":dnc " , "DM with Nephropathy with CRF ");
@@ -300,7 +255,7 @@ public class EMR_ChangeString {
     	replacements.put( ":ver " , "Vertigo ");
     	replacements.put( ":wei " , "Weight loss [ ] kg ");
     	replacements.put( ":weig " , "Weight gain [ ] kg ");
->>>>>>> refs/remotes/origin/feature
+
     	replacements.put( ":ww " , "with medication. ");
     	replacements.put( ":wq " , "without medication. ");
     	replacements.put( ":tegf " , "Hyperthyroidism Greaves' disease F/U ");
