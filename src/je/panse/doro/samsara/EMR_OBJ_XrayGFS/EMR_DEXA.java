@@ -36,7 +36,7 @@ public class EMR_DEXA extends JFrame implements ActionListener {
         // Set frame properties
         setTitle("EMR DEXA Interface");
         setSize(500, 650);
-        setLocationRelativeTo(null);
+//        setLocationRelativeTo(null);
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         

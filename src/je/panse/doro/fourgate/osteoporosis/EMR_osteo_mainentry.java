@@ -12,5 +12,6 @@ public class EMR_osteo_mainentry {
         
         // Calling the main method of the EMR_Osteo_westpanel class
         EMR_Osteo_westpanel.main(null);
+        EMR_osteo_MedicalHistory.main(null);
     }
 }

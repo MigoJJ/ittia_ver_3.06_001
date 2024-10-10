@@ -4,15 +4,16 @@ import java.awt.*;
 import javax.swing.*;
 
 public class EMR_osteo_MedicalHistory {
+	 private static JFrame frame; 
 
     public static void main(String[] args) {
         // Create the frame
-        JFrame frame = new JFrame("Medical History Form");
+        frame = new JFrame("Medical History Form");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(800, 1000);
         frame.setLayout(new BorderLayout());
         frame.setLocationRelativeTo(null);
-
+        
         // Create a panel for checkboxes and text fields in the center
         JPanel centerPanel = new JPanel(new GridLayout(0, 1, 10, 10));
 
@@ -119,8 +120,10 @@ public class EMR_osteo_MedicalHistory {
                         }
                     }
                 });
-            } else if (label.equals("Quit")) {
-                button.addActionListener(e -> System.exit(0));
+            }         else if (label.equals("Quit")) {
+                button.addActionListener(e -> {
+                    frame.dispose(); // Now you can call dispose() on the 'frame' object
+                });
             }
         }
     }
