@@ -9,5 +9,6 @@ public class EMR_osteo_mainentry {
     public static void main(String[] args) {
         // Calling the main method of EMR_DEXA class
         EMR_DEXA.main(null);
+        EMR_Osteo_westpanel.main(null);
     }
 }
