@@ -29,13 +29,13 @@ public class EMR_Osteo_westpanel {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         String[] buttonNames = {
-                "Osteo General symptoms",
-                "DM Retinopathy",
-                "DM Peripheral Neuropathy",
-                "DM Autonomic Neuropathy",
-                "Medications",
-                "DM F/U Laboratory Test",
-                "DM",
+                "Osteoporosis Medical History",
+                "Osteoporosis Lifestyle Factors",
+                "Osteoporosis Risk Assessment & Symptoms",
+                "Osteoporosis Diagnosis & Treatment Plan",
+                "Osteoporosis",
+                "Osteoporosis",
+                "Osteoporosis",
                 "Quit"
         };
 

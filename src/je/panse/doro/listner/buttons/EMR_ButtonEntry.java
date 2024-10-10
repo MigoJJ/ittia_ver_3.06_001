@@ -15,6 +15,7 @@ import je.panse.doro.fourgate.EMR_FU_mainEdit;
 import je.panse.doro.fourgate.EMR_FU_uriEdit;
 import je.panse.doro.fourgate.diabetes.EMR_dm_mainentry;
 import je.panse.doro.fourgate.influenza.InjectionApp;
+import je.panse.doro.fourgate.osteoporosis.EMR_osteo_mainentry;
 import je.panse.doro.fourgate.routinecheck.RoutineCheck;
 import je.panse.doro.fourgate.thyroid.entry.EMR_thyroid_mainentry;
 import je.panse.doro.fourgate.thyroid.pregnancy.EMR_thyroid_Pregnancyentry;
@@ -124,7 +125,7 @@ public class EMR_ButtonEntry extends GDSEMR_frame {
                     EMR_thyroid_Pregnancyentry.main(null);
                     break;
                 case "Osteoporosis":
-                	  EMR_DEXA.main(null);
+                	EMR_osteo_mainentry.main(null);
                     break;
                 case "URI":
                     EMR_FU_uriEdit.main(null);

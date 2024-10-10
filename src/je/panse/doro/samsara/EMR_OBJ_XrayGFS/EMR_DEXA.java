@@ -183,19 +183,33 @@ public class EMR_DEXA extends JFrame implements ActionListener {
         resultTextArea.setText("");
     }
 
-    private void updateResultTextAreas(String diagnosis, int age, String gender, boolean fractureHistory,boolean menopauseHistory) {
+    private void updateResultTextAreas(String diagnosis, int age, String gender, boolean fractureHistory, boolean menopauseHistory) {
+        // Update primary diagnosis text area
         resultTextArea.setText(diagnosis);
+        
+        // Update the DEXA section in the frame
         GDSEMR_frame.setTextAreaText(5, "\n< DEXA >\n\t" + diagnosis);
+        
+        // Get the current date
         String cdate = Date_current.main("d");
 
+        // Determine fracture status
         String fractureStatus = fractureHistory ? "[+]" : "none";
-        String menopauseStatus = menopauseHistory ? "[+]" : "none";
+        
+        // If gender is female, include menopause status; otherwise, omit it
+        if (gender.equalsIgnoreCase("male")) {
+            // Menopause is not relevant for males, so omit it
+            GDSEMR_frame.setTextAreaText(5, String.format("\n   Age : [%d]  Gender : [%s]  Fracture : %s", age, gender, fractureStatus));
+        } else {
+            // Include menopause status for females
+            String menopauseStatus = menopauseHistory ? "[+]" : "none";
+            GDSEMR_frame.setTextAreaText(5, String.format("\n   Age : [%d]  Gender : [%s]  Fracture : %s  Menopause : %s", age, gender, fractureStatus, menopauseStatus));
+        }
 
-        
-        GDSEMR_frame.setTextAreaText(5, String.format("\n   Age : [%d]  Gender : [%s]  Fracture : %s  Menopause : %s", age, gender, fractureStatus,menopauseStatus));
-        
+        // Update another section with the diagnosis and the current date
         GDSEMR_frame.setTextAreaText(9, "\n#  " + diagnosis + "   " + cdate);
     }
+
 
 
     private String calculateDEXADiagnosis(int age, String gender, double totZScore, boolean fractureHistory, boolean menopauseHistory) {
