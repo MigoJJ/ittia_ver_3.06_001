@@ -19,6 +19,7 @@ import javax.swing.event.DocumentListener;
 import je.panse.doro.chartplate.*;
 import je.panse.doro.fourgate.influenza.InjectionApp;
 import je.panse.doro.listner.buttons.EMR_BlendColors;
+import je.panse.doro.listner.buttons.GDSEMR_ButtonPanel;
 import je.panse.doro.samsara.*;
 import je.panse.doro.samsara.EMR_OBJ_Vitalsign.Vitalsign;
 import je.panse.doro.samsara.EMR_OBJ_excute.*;

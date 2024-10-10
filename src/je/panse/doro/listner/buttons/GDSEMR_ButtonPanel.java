@@ -1,4 +1,4 @@
-package je.panse.doro.chartplate;
+package je.panse.doro.listner.buttons;
 
 import java.awt.Color;		
 import java.awt.FlowLayout;
@@ -6,7 +6,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
-import je.panse.doro.listner.buttons.EMR_ButtonEntry;
 
 public class GDSEMR_ButtonPanel extends JPanel {
     private JButton[] buttons = new JButton[11];
@@ -54,10 +53,11 @@ public class GDSEMR_ButtonPanel extends JPanel {
 			 buttons[1].setText("F/U HTN");
 			 buttons[2].setText("F/U Chol");
 			 buttons[3].setText("F/U Thyroid");
-			 buttons[4].setText("URI");
-			 buttons[5].setText("Injections");
-			 buttons[6].setText("GDS RC");
-			 buttons[7].setText("공단검진");
+			 buttons[4].setText("Osteoporosis");
+			 buttons[5].setText("URI");
+			 buttons[6].setText("Injections");
+			 buttons[7].setText("GDS RC");
+			 buttons[8].setText("공단검진");
 			 buttons[9].setText("DM retinopathy");
 			 buttons[10].setText("F/U Edit");
 			 // Add the button panel to the south of the frame

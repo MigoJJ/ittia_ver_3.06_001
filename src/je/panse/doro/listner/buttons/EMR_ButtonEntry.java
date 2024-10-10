@@ -1,6 +1,6 @@
 package je.panse.doro.listner.buttons;
 
-import java.awt.Toolkit;
+import java.awt.Toolkit;	
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 
@@ -121,7 +121,9 @@ public class EMR_ButtonEntry extends GDSEMR_frame {
                 case "F/U Thyroid":
                     EMR_thyroid_mainentry.main(null);
                     EMR_thyroid_Pregnancyentry.main(null);
-                    
+                    break;
+                case "Osteoporosis":
+                    EMR_FU_uriEdit.main(null);
                     break;
                 case "URI":
                     EMR_FU_uriEdit.main(null);

@@ -29,7 +29,7 @@ public class EMRPMH extends JFrame {
         "Arthritis", "Hearing Loss", "Parkinson's Disease",
         "CVA", "Depression", "Cognitive Disorder",
         "AMI","Angina Pectoris", "Arrhythmia",
-        "Allergy", "Food", "Injection", "Medication","..."
+        "Allergy", "Food", "Injection", "Medication","All denied allergies..."
     };
 
     public EMRPMH() {
@@ -102,7 +102,7 @@ public class EMRPMH extends JFrame {
             "    □ Arthritis        \t□ Hearing Loss     \t□ Parkinson's Disease\n" +
             "    □ CVA              \t□ Depression       \t□ Cognitive Disorder\n" +
             "    □ AMI              \t□ Angina Pectoris  \t□ Arrhythmia\n" +
-            "    □ Allergy          \t□ ...              \n" +
+            "    □ Allergy          \t□ All denied allergies...\n" +
             "    □ Food             \t□ Injection        \t□ Medication\n"
         );
     }
@@ -132,17 +132,35 @@ public class EMRPMH extends JFrame {
     }
 
     private void saveAction(ActionEvent e) {
-        System.out.println("Details from TextArea1: " + textArea1.getText());
-        System.out.println("Details from TextArea2: " + textArea2.getText());
-        System.out.println("Selected Conditions:\n" + String.join("\n", getSelectedConditions()));
+        // Get text from text areas and add separators using StringBuilder
+        StringBuilder textArea1Content = new StringBuilder();
+        textArea1Content.append("-------------------------\n")
+                        .append(textArea1.getText())
+                        .append("\n--------------------------");
+        
+        StringBuilder textArea2Content = new StringBuilder();
+        textArea2Content.append("-------------------------\n")
+                        .append(textArea2.getText())
+                        .append("\n-------------------------------------------------");
 
-        // Update GDSEMR_frame text areas
-        String textArea1Content = "-------------------------\n" + textArea1.getText() + "\n--------------------------";
-        String textArea2Content = "-------------------------\n" + textArea2.getText() + "\n-------------------------------------------------";
+        // Check if "All denied allergies" exists within the content
+        String searchPhrase = "All denied allergies";
+        if (textArea1Content.toString().contains(searchPhrase)) {
+            // Replace only the specific phrase while keeping other content
+            String replacement = "Allergy\n   During the medical check-up, the patient had no known allergies\n   "
+                                 + "to food, injections and medications as of October 2024";
+            int start = textArea1Content.indexOf(searchPhrase);
+            int end = start + searchPhrase.length();
+            textArea1Content.replace(start, end, replacement);
+        }
 
-        GDSEMR_frame.setTextAreaText(7, textArea1Content);
-        GDSEMR_frame.setTextAreaText(3, textArea2Content);
+        // Update GDSEMR_frame text areas on the EDT for thread safety
+        SwingUtilities.invokeLater(() -> {
+            GDSEMR_frame.setTextAreaText(7, textArea1Content.toString());
+            GDSEMR_frame.setTextAreaText(3, textArea2Content.toString());
+        });
     }
+
 
 
     private String getCheckedItemsText() {

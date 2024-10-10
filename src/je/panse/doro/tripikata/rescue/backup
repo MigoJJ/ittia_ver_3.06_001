@@ -1,6 +1,21 @@
 
-  PI>	
-... ➢ Sanofi's VaxigripTetra® Vaccine(4가) [유독] side effect [ ⏵ ]
-	[ ⏵ ] Swelling
-	[ ⏵ ] Fever or chilling
-     [ ✔ ] All other side effects of injections are denied.
+  PMH>	-------------------------
+    □ Dyslipidemia     	□ Hypertension     	□ Diabetes Mellitus
+    □ Cancer           	□ Operation        	▣ Thyroid Disease
+    □ Asthma           	□ Pneumonia        	▣ Tuberculosis
+    □ GERD             	▣ Hepatitis A / B  	□ Gout
+    □ Arthritis        	▣ Hearing Loss     	□ Parkinson's Disease
+    □ CVA              	□ Depression       	□ Cognitive Disorder
+    □ AMI              	□ Angina Pectoris  	□ Arrhythmia
+    □ Allergy          	▣ All denied allergies...
+    □ Food             	□ Injection        	□ Medication
+-------------------------------------------------
+  A>	-------------------------
+   ▣ Allergy
+   During the medical check-up, the patient had no known allergies
+   to food, injections and medications as of October 2024...
+   ▣ Hepatitis A / B
+   ▣ Hearing Loss
+   ▣ Thyroid Disease
+   ▣ Tuberculosis
+--------------------------
